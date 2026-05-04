@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Asmat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { width: 100%; height: 100%; overflow: hidden; background-color: #050505; font-family: 'Poppins', sans-serif; color: #fff; }
+
+        /* Terminal Intro */
+        #terminal { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 2rem; font-family: monospace; font-size: 1.2rem; color: #0f0; background: #000; z-index: 100; transition: opacity 2s ease-in-out; }
+        .type-line { overflow: hidden; white-space: nowrap; margin-bottom: 0.5rem; border-right: 2px solid #0f0; animation: typing 2s steps(40, end), blink-caret .75s step-end infinite; }
+        .hidden-line { display: none; }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #0f0; } }
+
+        /* Main Experience */
+        #main-experience { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; opacity: 0; transition: opacity 3s ease-in-out; z-index: 1; background: radial-gradient(circle at center, #1a0b2e 0%, #000000 100%); }
+        canvas { display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+
+        /* The Card */
+        #card-container { position: relative; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; z-index: 3; perspective: 1000px; }
+        .glass-card { width: 90%; max-width: 600px; min-height: 450px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 3rem; text-align: center; box-shadow: 0 25px 45px rgba(0,0,0,0.5); transform-style: preserve-3d; transition: transform 0.1s; cursor: pointer; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        
+        .message { font-size: 1.3rem; line-height: 1.8; font-weight: 300; opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); position: absolute; width: 80%; pointer-events: none; }
+        .message.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .message b { font-weight: 600; color: #e94560; }
+
+        .instruction { position: absolute; bottom: 20px; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.5; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 0.3; } 50% { opacity: 0.8; } 100% { opacity: 0.3; } }
+
+        /* Mobile tweaks */
+        @media (max-width: 600px) {
+            .glass-card { padding: 2rem; min-height: 450px; }
+            .message { font-size: 1.1rem; width: 90%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Intro Terminal -->
+    <div id="terminal">
+        <div id="term-1" class="type-line">> New hardware detected: Headphones.</div>
+        <div id="term-2" class="type-line hidden-line">> Initializing mic test...</div>
+        <div id="term-3" class="type-line hidden-line">> Connecting to random server... (Omegle protocol)</div>
+        <div id="term-4" class="type-line hidden-line">> Connecting 3 users...</div>
+        <div id="term-5" class="type-line hidden-line">> User 'Esha' joined.</div>
+        <div id="term-6" class="type-line hidden-line" style="color: #e94560;">> Error: Name mismatch. True identity: Asmat.</div>
+        <div id="term-7" class="type-line hidden-line" style="color: #e94560;">> Status: Soulmate found. Bypassing systems...</div>
+    </div>
+
+    <!-- Main Romantic Experience -->
+    <div id="main-experience">
+        <canvas id="particles"></canvas>
+        <div id="card-container">
+            <div class="glass-card" id="love-card">
+                <!-- Messages -->
+                <!-- Messages -->
+                <div class="message active">
+                    Happy 2nd Anniversary, <b>Asmat</b>. <br><br>
+                    I know we've only been together since March 5th, but I don't even remember who I was before I met you. Those two months feel like a lifetime because you’ve filled every single second of them.
+                </div>
+                <div class="message">
+                    I think back to that day on Omegle all the time. I was just some guy testing out new headphones, typing random letters into Google, and then... there you were. <br><br>
+                    One minute I'm checking my mic quality, and the next, I'm talking to a girl from Kashmir who would end up becoming my entire world. Best "mistake" I ever made.
+                </div>
+                <div class="message">
+                    I’ve been through a lot lately—the accidents, being sick, feeling like I’m falling apart. I know I don’t look or feel like the man I want to be for you right now. <br><br>
+                    But the way you still look at me... it makes me feel like I’m worth something. You stayed when things got ugly. You have no idea what that means to me.
+                </div>
+                <div class="message">
+                    I know you get those days where you overthink everything. You get those mood swings and you start scared that I’ll leave. <br><br>
+                    Asmat, look at me. I’m the one who’s terrified of losing <i>you</i>. You’re the energetic, beautiful soul that keeps me going. Why would I ever walk away from the only thing that makes me happy?
+                </div>
+                <div class="message">
+                    We took those swears, and in my heart, you are already my wife. I don't need a ceremony to know that I'm yours forever. <br><br>
+                    You're not just my girl; you're my purpose. When I’m busy or away, just know I’m counting the seconds until I can talk to you again.
+                </div>
+                <div class="message">
+                    You complete me in ways I can't even put into words. I yearn for you every single day. I don't want a life where you aren't there to wake me up or calm me down. <br><br>
+                    You are beautiful, you are mine, and I am never letting go. <br><br><b>I love you, Asmat. Happy Anniversary.</b>
+                </div>
+
+                <div class="instruction">Tap anywhere on the card</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- TERMINAL LOGIC ---
+        const terminal = document.getElementById('terminal');
+        const mainExperience = document.getElementById('main-experience');
+        const lines = [
+            { id: 'term-1', delay: 2000 },
+            { id: 'term-2', delay: 1500 },
+            { id: 'term-3', delay: 2000 },
+            { id: 'term-4', delay: 1500 },
+            { id: 'term-5', delay: 2000 },
+            { id: 'term-6', delay: 2500 },
+            { id: 'term-7', delay: 3000 }
+        ];
+
+        let currentDelay = 0;
+        lines.forEach((line, index) => {
+            setTimeout(() => {
+                const el = document.getElementById(line.id);
+                el.classList.remove('hidden-line');
+                el.style.animation = `typing 1.5s steps(40, end), blink-caret .5s step-end ${index === lines.length - 1 ? 'infinite' : '1'}`;
+                
+                // Hide previous caret
+                if (index > 0) {
+                    document.getElementById(lines[index-1].id).style.borderRight = 'none';
+                }
+
+                // If last line, trigger transition to main experience
+                if (index === lines.length - 1) {
+                    setTimeout(() => {
+                        terminal.style.opacity = '0';
+                        setTimeout(() => {
+                            terminal.style.display = 'none';
+                            mainExperience.style.display = 'block';
+                            setTimeout(() => { mainExperience.style.opacity = '1'; initCanvas(); }, 100);
+                        }, 2000);
+                    }, 3000);
+                }
+            }, currentDelay);
+            currentDelay += line.delay;
+        });
+
+        // --- MESSAGE REVEAL LOGIC ---
+        const card = document.getElementById('love-card');
+        const messages = document.querySelectorAll('.message');
+        let currentMsgIndex = 0;
+
+        card.addEventListener('click', () => {
+            if (currentMsgIndex < messages.length - 1) {
+                messages[currentMsgIndex].classList.remove('active');
+                currentMsgIndex++;
+                messages[currentMsgIndex].classList.add('active');
+                
+                if (currentMsgIndex === messages.length - 1) {
+                    document.querySelector('.instruction').style.display = 'none';
+                }
+            }
+        });
+
+        // --- 3D TILT LOGIC ---
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -10; 
+            const rotateY = ((x - centerX) / centerX) * 10;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+            card.style.transition = 'transform 0.5s ease';
+            setTimeout(() => card.style.transition = 'transform 0.1s', 500);
+        });
+
+        // --- CANVAS PARTICLE PHYSICS ---
+        function initCanvas() {
+            const canvas = document.getElementById('particles');
+            const ctx = canvas.getContext('2d');
+            let width, height, particles;
+            let mouse = { x: null, y: null, radius: 150 };
+
+            function resize() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.x;
+                mouse.y = e.y;
+            });
+            window.addEventListener('touchmove', (e) => {
+                mouse.x = e.touches[0].clientX;
+                mouse.y = e.touches[0].clientY;
+            });
+            window.addEventListener('mouseout', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.size = Math.random() * 3 + 1;
+                    this.baseX = this.x;
+                    this.baseY = this.y;
+                    this.density = (Math.random() * 30) + 1;
+                    this.color = Math.random() > 0.5 ? '#e94560' : '#8a2be2';
+                }
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.closePath();
+                    ctx.fill();
+                    
+                    // Glow
+                    ctx.shadowBlur = 15;
+                    ctx.shadowColor = this.color;
+                }
+                update() {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    let forceDirectionX = dx / distance;
+                    let forceDirectionY = dy / distance;
+                    let maxDistance = mouse.radius;
+                    let force = (maxDistance - distance) / maxDistance;
+                    let directionX = forceDirectionX * force * this.density;
+                    let directionY = forceDirectionY * force * this.density;
+
+                    if (distance < mouse.radius) {
+                        this.x -= directionX;
+                        this.y -= directionY;
+                    } else {
+                        if (this.x !== this.baseX) {
+                            let dx = this.x - this.baseX;
+                            this.x -= dx / 10;
+                        }
+                        if (this.y !== this.baseY) {
+                            let dy = this.y - this.baseY;
+                            this.y -= dy / 10;
+                        }
+                    }
+                    this.draw();
+                }
+            }
+
+            function initParticles() {
+                particles = [];
+                let numberOfParticles = (width * height) / 9000;
+                for (let i = 0; i < numberOfParticles; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                }
+                requestAnimationFrame(animate);
+            }
+
+            initParticles();
+            animate();
+        }
+    </script>
+</body>
+</html>
